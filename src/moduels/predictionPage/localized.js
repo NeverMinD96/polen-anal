@@ -1,7 +1,7 @@
 export default {
   'topDescription': {
-    'ru': "Можно добавлять от 1 до 500 фото, чтоб добавить фото положите их в папку и загрузите папку.",
-    'en': "You can add from 1 to 500 photos, to add photos put them in a folder and upload the folder."
+    'ru': "Можно добавлять от 1 до 500 фото, чтоб добавить фото положите их в папку или выберите отдельно.",
+    'en': "You can add from 1 to 500 photos to add photos put them in a folder or select separately."
   },
   'faq1': {
     'ru': "Привет! Это сервис автоматического распознавания пыльцевых зерен на изображениях Pollen Analyst. Пожалуйста,ознакомьтесь с краткой инструкцией перед началом пользования сервисом.",
@@ -26,6 +26,10 @@ export default {
   'chosePhoto': {
     'ru': "выбрать фото",
     'en': "select photo"
+  },
+  'choseFolder': {
+    'ru': "выбрать папку с фото",
+    'en': "select folder photos"
   },
   'generate': {
     'ru': "сгенерировать отчет",

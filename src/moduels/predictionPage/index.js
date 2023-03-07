@@ -54,6 +54,18 @@ function PredictPage(props) {
     setImageTiles(newImageTiles)
   }
 
+  function handleFolderClick() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.webkitdirectory = true;
+    input.directory = true
+    input.onchange = (e) => {
+      const files = e.target.files;
+      handleChange(files);
+    };
+    input.click();
+  }
+
   const userLocale = getUserLocale();
   const documentLocale = userLocale.includes('ru') ? 'ru' : 'en'
 
@@ -243,9 +255,8 @@ function PredictPage(props) {
           {localized(texts['topDescription'], locale)}
         </div>
         <input
-          directory=""
-          webkitdirectory=""
           type="file"
+          multiple
           id="selectedFile"
           style={{display: "none"}}
           onChange={(e) => handleChange(e.target.files)}
@@ -264,6 +275,17 @@ function PredictPage(props) {
             }
           </div>
         </button>
+        {
+          !imageTiles.length &&
+          <button
+            className={"action-button" + (imageTiles.length === 0 ? " active" : "")}
+            onClick={handleFolderClick}
+          >
+            <div className={"inner-text"}>
+              {localized(texts['choseFolder'], locale)}
+            </div>
+          </button>
+        }
         <button
           className={"action-button" + ((imageTiles.length > 0 && !didFormReport) ? " active" : " passive")}
           style={!isLoading ? {width: '260px', height: '40.5px'}: {width: '40.5px', height: '40.5px'}}
